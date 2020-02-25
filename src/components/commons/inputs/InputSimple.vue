@@ -1,7 +1,7 @@
 <template>
   <div class="comm_input_simple">
-    <label :for="id">{{ label }}</label>
-    <input :type="type" :id="id" :accept="accept" @input="inputHndr" />
+    <input class="inp_simple" :type="type" :id="id" @input="inputHndr" />
+    <label class="lab_simple" :for="id">{{ label }}</label>
   </div>
 </template>
 
@@ -16,11 +16,7 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: value => ['text', 'number', 'file'].indexOf(value) !== -1
-    },
-    accept: {
-      type: String,
-      default: null
+      validator: value => ['text', 'number'].indexOf(value) !== -1
     },
     label: {
       type: String,
@@ -36,5 +32,18 @@ export default {
 
 <style scoped>
 .comm_input_simple {
+  position: relative;
+}
+.comm_input_simple .lab_simple {
+  display: block;
+  cursor: pointer;
+}
+.comm_input_simple .inp_simple {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 </style>

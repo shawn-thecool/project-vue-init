@@ -1,13 +1,13 @@
 <template>
-  <div class="comm_input_file">
+  <div class="comm_input_number">
     <label :for="id">{{ labelText }}</label>
-    <input type="file" :id="id" :accept="accept" @input="inputHndr" />
+    <input type="number" :id="id" @input="inputHndr" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'comm-input-file',
+  name: 'comm-input-number',
   props: {
     id: {
       type: String,
@@ -15,10 +15,6 @@ export default {
     },
     labelText: {
       type: String,
-      default: null
-    },
-    accept: {
-      tpye: String,
       default: null
     },
     inputHndr: {
@@ -30,6 +26,6 @@ export default {
 </script>
 
 <style scoped>
-.inp_file {
+.comm_input_number {
 }
 </style>

@@ -1,4 +1,6 @@
-const state = {}
+const state = {
+  popupList:[]
+}
 const getters = {}
 const mutations = {}
 const actions = {}

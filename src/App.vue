@@ -1,20 +1,27 @@
 <template>
   <div id="app">
     <h1>app</h1>
-    <input-simple type="text" id="inp-spl-text-test" label="..." :input-hndr="inputHndr"></input-simple>
+    <!-- <input-simple type="text" id="inp-spl-text-test" label="..." :input-hndr="inputHndr"></input-simple>
     <input-simple type="number" id="inp-spl-number-test" label="..." :input-hndr="inputHndr"></input-simple>
 
     <button-simple text="버튼" button-type="confirm" :click-hndr="clickHndr"></button-simple>
     <button-simple text="버튼" button-type="error" :click-hndr="clickHndr"></button-simple>
     <button-simple text="버튼" button-type="warning" :click-hndr="clickHndr"></button-simple>
     <button-simple text="버튼" button-type="default" :click-hndr="clickHndr"></button-simple>
+
+    <alert-simple>
+      <template v-slot:header>header</template>
+      <template v-slot:body>body</template>
+      <template v-slot:footer>footer</template>
+    </alert-simple> -->
+    <router-view></router-view>
+    <popup-list></popup-list>
   </div>
 </template>
 
 <script>
-import InputSimple from '@commons/inputs/InputSimple.vue'
+import PopupList from '@commons/modals/popup/PopupList.vue'
 
-import ButtonSimple from '@commons/button/ButtonSimple.vue'
 export default {
   name: 'App',
   methods: {
@@ -26,8 +33,7 @@ export default {
     }
   },
   components: {
-    ButtonSimple,
-    InputSimple
+    PopupList
   }
 }
 </script>

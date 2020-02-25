@@ -8,6 +8,7 @@
     <button-simple text="버튼" button-type="error" :click-hndr="clickHndr"></button-simple>
     <button-simple text="버튼" button-type="warning" :click-hndr="clickHndr"></button-simple>
     <button-simple text="버튼" button-type="default" :click-hndr="clickHndr"></button-simple>
+    <modal-simple></modal-simple>
   </div>
 </template>
 
@@ -15,6 +16,7 @@
 import InputSimple from '@commons/inputs/InputSimple.vue'
 
 import ButtonSimple from '@commons/button/ButtonSimple.vue'
+import ModalSimple from '@commons/modals/ModalSimple.vue'
 export default {
   name: 'App',
   methods: {
@@ -27,7 +29,8 @@ export default {
   },
   components: {
     ButtonSimple,
-    InputSimple
+    InputSimple,
+    ModalSimple
   }
 }
 </script>

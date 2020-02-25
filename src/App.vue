@@ -3,11 +3,13 @@
     app
     <!-- <inputFile id="fileUploadTester" accept=".png, .jpeg" label-text="test" :input-hndr="inputHndr"></inputFile> -->
     <input-file id="inputFileTest" :input-hndr="inputHndr"></input-file>
+    <Button>버튼</Button>
   </div>
 </template>
 
 <script>
 import InputFile from '@commons/inputFile/InputFile.vue'
+import Button from '@commons/button/Button.vue'
 export default {
   name: 'App',
   methods: {
@@ -16,7 +18,8 @@ export default {
     }
   },
   components: {
-    InputFile
+    InputFile,
+    Button
   }
 }
 </script>

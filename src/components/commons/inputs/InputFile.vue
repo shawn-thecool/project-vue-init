@@ -1,11 +1,12 @@
 <template>
   <div class="comm_input_file">
-    <label :for="id">{{ labelText }}</label>
-    <input type="file" :id="id" :accept="accept" @input="inputHndr" />
+    <input type="file" :id="id" class="inp_file" :accept="accept" @input="inputHndr" />
+    <label :for="id" class="lab_file">{{ labelText }}</label>
   </div>
 </template>
 
 <script>
+// TODO: label slot 적용
 export default {
   name: 'comm-input-file',
   props: {
@@ -31,5 +32,21 @@ export default {
 
 <style scoped>
 .comm_input_file {
+<<<<<<< HEAD:src/components/commons/inputs/InputFile.vue
+=======
+  position: relative;
+}
+.comm_input_file .lab_file {
+  display: block;
+  cursor: pointer;
+}
+.comm_input_file .inp_file {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height:100%;
+  top: 0;
+  left: 0;
+>>>>>>> f19533ebd8d3b2fe7e65059bec4120c17778e3d3:src/components/commons/inputFile/InputFile.vue
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="inp_file">
+  <div class="comm_input_file">
     <label :for="id">{{ labelText }}</label>
     <input type="file" :id="id" :accept="accept" @input="inputHndr" />
   </div>

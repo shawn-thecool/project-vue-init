@@ -14,8 +14,11 @@
       <template v-slot:body>body</template>
       <template v-slot:footer>footer</template>
     </alert-simple> -->
+
     <router-view></router-view>
+
     <popup-list></popup-list>
+
   </div>
 </template>
 
@@ -32,9 +35,12 @@ export default {
       console.log('click')
     }
   },
+  mounted(){
+    console.log(this.$route);
+  },
   components: {
     PopupList
-  }
+  },
 }
 </script>
 

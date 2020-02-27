@@ -44,7 +44,7 @@
     "last 2 versions"
   ],
   "prettier": {
-    "printWidth": 150,
+    "printWidth": 100,
     "semi": false,
     "tabWidth": 2,
     "bracketSpacing": true,

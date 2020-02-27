@@ -1,8 +1,17 @@
 <template>
-  <div class="comm_popup_list">
-    <popup-simple v-for="popup in popups" :key="popup.id" :type="popup.type" :id="popup.id"></popup-simple>
-    <popup-dimmed v-if="hasPopup"></popup-dimmed>
-  </div>
+    <div class="comm_popup_list">
+      <popup-simple
+        v-for="popup in popups"
+        :key="popup.id"
+        :id="popup.id"
+        :type="popup.type"
+        :onClose="popup.onClose"
+        :onCancel="popup.onCancel"
+        :onOk="popup.onOk"
+      >
+      </popup-simple>
+      <popup-dimmed v-if="hasPopup"></popup-dimmed>
+    </div>
 </template>
 
 <script>
@@ -23,3 +32,5 @@ export default {
   }
 }
 </script>
+
+

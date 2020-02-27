@@ -26,6 +26,7 @@ export default {
   methods: {
     ...mapMutations(['createPopup', 'removePopup']),
     openPopupTest1() {
+      // TODO: 팝업 데이터는 상수 풀에서 가져올것
       const id = 'popup-test-1'
       this.createPopup({
         id: id,
@@ -36,6 +37,7 @@ export default {
       })
     },
     openPopupTest2() {
+      // TODO: 팝업 데이터는 상수 풀에서 가져올것
       const id = 'popup-test-2'
       this.createPopup({
         id: id,

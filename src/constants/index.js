@@ -6,3 +6,8 @@ const POPUP_SPEC = {
   onCancel: () => null,
   onClose: () => null
 }
+
+export const POPUP = {
+  HELLO: { id: 'popup-test-1', type: 'popup' },
+  WELCOME: { id: 'popup-test-2', type: 'alert' }
+}

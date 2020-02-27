@@ -8,7 +8,12 @@
     <button-simple text="버튼" button-type="error" :click-hndr="clickHndr"></button-simple>
     <button-simple text="버튼" button-type="warning" :click-hndr="clickHndr"></button-simple>
     <button-simple text="버튼" button-type="default" :click-hndr="clickHndr"></button-simple>
-    <modal-simple></modal-simple>
+    <drop-down-simple>
+      <template v-slot:DropDownItemList>
+        <li v-for="(item, index) in testList" :key="index" class="item_drop">{{ index }}</li>
+      </template>
+    </drop-down-simple>
+    <InputSelectbox select-id="selectTest" place-holder="select items" :value="testValue" :data-list="testList" :select-Hndr="selectHndr"/>
   </div>
 </template>
 
@@ -16,21 +21,49 @@
 import InputSimple from '@commons/inputs/InputSimple.vue'
 
 import ButtonSimple from '@commons/button/ButtonSimple.vue'
-import ModalSimple from '@commons/modals/ModalSimple.vue'
+import InputSelectbox from '@commons/inputs/InputSelectbox.vue'
+import DropDownSimple from '@commons/dropdown/DropDownSimple.vue'
 export default {
   name: 'App',
+  data() {
+    return {
+      testValue : '',
+      testList: [
+        {
+          value: 0,
+          text: 0
+        },
+        {
+          value: 1,
+          text: 1
+        },
+        {
+          value: 2,
+          text: 2
+        },
+        {
+          value: 3,
+          text: 3
+        }
+      ]
+    }
+  },
   methods: {
     inputHndr() {
       console.log('input')
     },
     clickHndr() {
       console.log('click')
+    },
+    selectHndr() {
+      console.log('select')
     }
   },
   components: {
     ButtonSimple,
     InputSimple,
-    ModalSimple
+    DropDownSimple,
+    InputSelectbox
   }
 }
 </script>
@@ -47,12 +80,13 @@ export default {
 /*
   hover focus 예시
  */
-#app .wrap_file .lab_file{
+#app .wrap_file .lab_file {
   height: 200px;
   line-height: 200px;
   background-color: pink;
 }
-#app .wrap_file .inp_file:focus + .lab_file ,#app .wrap_file .lab_file:hover{
-  background-color: lightgoldenrodyellow
+#app .wrap_file .inp_file:focus + .lab_file,
+#app .wrap_file .lab_file:hover {
+  background-color: lightgoldenrodyellow;
 }
 </style>

@@ -5,7 +5,7 @@ import popup from './modules/popup'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  modules: {  popup }
+  modules: { popup }
 })
 
 export default store

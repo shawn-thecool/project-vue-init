@@ -43,7 +43,7 @@ export default {
   display: block;
   border: 1px solid #000;
 }
-.comm_drop_down_simple .list_menu {
+.comm_drop_down_simple .list_drop {
   position: absolute;
   top: 100%;
   left: 0;

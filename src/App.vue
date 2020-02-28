@@ -21,10 +21,12 @@
 
     <drop-down-simple>
       <template v-slot:DropDownItemList>
-        <li v-for="(item, index) in testList" :key="index" class="item_drop">{{ index }}</li>
+        <ul>
+          <li v-for="(item, index) in testList" :key="index" class="item_drop">{{ index }}</li>
+        </ul>
       </template>
     </drop-down-simple>
-    
+
     <InputSelectbox
       select-id="selectTest"
       place-holder="select items"
@@ -32,6 +34,24 @@
       :data-list="testList"
       :select-Hndr="selectHndr"
     />
+    <accordion-bunddle :item-list="testList">
+      <template v-slot="panel">
+        <accordion-panel 
+        v-for="(item, index) in panel.itemList" 
+        :key="index" 
+        :clickHndr="panel.clickTarget(index)" 
+        :defautlToggle="index === panel.currentOpenTarget"
+        class="item_accordion"
+        >
+          <template v-slot:header>
+            {{ item.value }}
+          </template>
+          <template v-slot:body>
+            {{ item.value }}
+          </template>
+        </accordion-panel>
+      </template>
+    </accordion-bunddle>
 
     <router-view></router-view>
     <popup-list></popup-list>
@@ -45,6 +65,9 @@ import ButtonSimple from '@commons/button/ButtonSimple.vue'
 import InputSelectbox from '@commons/inputs/InputSelectbox.vue'
 import InputSimple from '@commons/inputs/InputSimple.vue'
 import DropDownSimple from '@commons/dropdown/DropDownSimple.vue'
+import AccordionBunddle from '@commons/dropdown/AccordionBunddle.vue'
+import AccordionPanel from '@commons/dropdown/AccordionPanel.vue'
+
 export default {
   name: 'App',
   data() {
@@ -89,7 +112,9 @@ export default {
     ButtonSimple,
     InputSimple,
     DropDownSimple,
-    InputSelectbox
+    InputSelectbox,
+    AccordionBunddle,
+    AccordionPanel
   }
 }
 </script>

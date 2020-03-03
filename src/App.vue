@@ -36,12 +36,12 @@
     />
     <accordion-bunddle :item-list="testList">
       <template v-slot="panel">
-        <accordion-panel 
-        v-for="(item, index) in panel.itemList" 
-        :key="index" 
-        :clickHndr="panel.clickTarget(index)" 
-        :defautlToggle="index === panel.currentOpenTarget"
-        class="item_accordion"
+        <accordion-panel
+          v-for="(item, index) in panel.itemList"
+          :key="index"
+          :clickHndr="panel.clickTarget(index)"
+          :defautlToggle="index === panel.currentOpenTarget"
+          class="item_accordion"
         >
           <template v-slot:header>
             {{ item.value }}
@@ -52,7 +52,22 @@
         </accordion-panel>
       </template>
     </accordion-bunddle>
-
+    <!-- test -->
+    <accordion-item :toggle-data="0"></accordion-item>
+    <!-- // test -->
+    <AccordionList
+      v-slot="{ currentToggleIndex, clickToggleComponentHndr }"
+      :default-toggle-index="0"
+    >
+      <accordion-item
+        v-for="(item, index) in testList"
+        :key="index"
+        :toggle-index-data="index"
+        :standard-toggle-data="currentToggleIndex"
+        :click-hndr="clickToggleComponentHndr"
+      />
+      <!-- <accordion-item  toggle-index-data="ㄴ" :standard-toggle-data="currentToggleIndex" :click-hndr="clickToggleComponentHndr"></accordion-item> -->
+    </AccordionList>
     <router-view></router-view>
     <popup-list></popup-list>
   </div>
@@ -67,6 +82,9 @@ import InputSimple from '@commons/inputs/InputSimple.vue'
 import DropDownSimple from '@commons/dropdown/DropDownSimple.vue'
 import AccordionBunddle from '@commons/dropdown/AccordionBunddle.vue'
 import AccordionPanel from '@commons/dropdown/AccordionPanel.vue'
+import AccordionItem from '@commons/dropdown/accordionTest/AccordionItem.vue'
+
+import AccordionList from '@commons/dropdown/accordionTest/AccordionList.vue'
 
 export default {
   name: 'App',
@@ -114,7 +132,9 @@ export default {
     DropDownSimple,
     InputSelectbox,
     AccordionBunddle,
-    AccordionPanel
+    AccordionPanel,
+    AccordionItem,
+    AccordionList
   }
 }
 </script>

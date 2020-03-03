@@ -19,6 +19,7 @@
 </template>
 
 <script>
+// TODO : 좀더 common 하게 만들기 
 export default {
   name: 'comm-accordion',
   data(){
